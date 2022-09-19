@@ -1,4 +1,5 @@
 /*
+
     ==> Print alternate elements of an array <==
 
 Question Link:- https://practice.geeksforgeeks.org/problems/print-alternate-elements-of-an-array/1?page=1&difficulty[]=-2&category[]=Arrays&sortBy=submissions
