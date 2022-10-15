@@ -27,10 +27,7 @@ Example 2:
 using namespace std;
 
 bool check_elements(int arr[], int n, int A, int B) {
-	vector<int> check(10000002, 0);
-    for ( int i = 0; i < n; i++ ) check[arr[i]] = 1;
-    for ( int i = A; i <= B; i++ ) if (check[i] != 1) return false;
-    return true;
+
 }
 
 int main () {
