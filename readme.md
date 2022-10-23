@@ -57,3 +57,29 @@
 |31|Last index of One|[Link](https://github.com/tanmayvaij/geeksforgeeks-questions/blob/main/arrays/basic/question_31.cpp)|
 
 <br/>
+
+## Arrays ( Level - Easy )
+
+| | Questions | Solutions |
+|-|-----------|-----------|
+|1|Subarray with given sum|[Link](https://github.com/tanmayvaij/geeksforgeeks-questions/blob/main/arrays/easy/question_01.cpp)|
+|2|Missing number in array|[Link](https://github.com/tanmayvaij/geeksforgeeks-questions/blob/main/arrays/easy/question_02.cpp)|
+|3|Sort an array of 0s, 1s and 2s|[Link](https://github.com/tanmayvaij/geeksforgeeks-questions/blob/main/arrays/easy/question_03.cpp)|
+|6|Find duplicates in an array|[Link](https://github.com/tanmayvaij/geeksforgeeks-questions/blob/main/arrays/easy/question_06.cpp)|
+
+<br/>
+
+## Arrays ( Level - Medium )
+
+| | Questions | Solutions |
+|-|-----------|-----------|
+|4|Kth smallest element|[Link](https://github.com/tanmayvaij/geeksforgeeks-questions/blob/main/arrays/medium/question_04.cpp)|
+|5|Majority Element|[Link](https://github.com/tanmayvaij/geeksforgeeks-questions/blob/main/arrays/medium/question_05.cpp)|
+
+<br/>
+
+## Strings ( Level - School )
+
+| | Questions | Solutions |
+|-|-----------|-----------|
+|2|Display longest name|[Link](https://github.com/tanmayvaij/geeksforgeeks-questions/blob/main/strings/school/question_02.cpp)|
