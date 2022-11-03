@@ -1,55 +1,59 @@
 /*
 
-    ==> Game with nos <==
+    ==> Maximum in Struct Array <==
 
-Question Link:- https://practice.geeksforgeeks.org/problems/game-with-nos3123/1?page=2&difficulty[]=-1&category[]=Arrays&sortBy=submissions
+Question Link:- https://practice.geeksforgeeks.org/problems/maximum-in-struct-array/1?page=2&difficulty[]=-1&category[]=Arrays&sortBy=submissions
 
-You are given an array arr[], and you have to re-construct an array arr[].
-The values in arr[] are obtained by doing Xor of consecutive elements in the array.
+Given a struct array of type Height, having two elements feet and inches. Find the maximum 
+height among n heights, where height is calculated sum of feet and inches after converting 
+feet into inches.
 
 Example 1:
-    Input : n=5, arr[ ] = {10, 11, 1, 2, 3}
-    Output : 1 10 3 1 3
+    Input:
+        n = 2
+        h1 -> 1 2
+        h2 -> 2 1
+    Output: 
+        25
     Explanation:
-    At index 0, arr[0] xor arr[1] = 1
-    At index 1, arr[1] xor arr[2] = 10
-    At index 2, arr[2] xor arr[3] = 3
-    ...
-    At index 4, No element is left So, it will remain as
-    it is.
-    New Array will be {1, 10, 3, 1, 3}.
-
-Example 2:
-    Input : n=4, arr[ ] = {5, 9, 7, 6}
-    Output :  12 14 1 6
-    Explanation:
-    At index 0, arr[0] xor arr[1] = 12
-    At index 1, arr[1] xor arr[2] = 14
-    At index 2, arr[2] xor arr[3] = 1
-    At index 3, No element is left So, it will remain as it is.
-    New Array will be {12, 14, 1, 6}.
+    (1, 2) and (2, 1) are respective given heights.
+    After converting both heigths in to inches,
+    we get 14 and 25 as respective heights.
+    So, 25 is the maximum height.
 
 */
 
 #include <iostream>
 using namespace std;
 
-void printArray(int arr[], int n) {
-    for ( int i = 0; i < n; i++ ) cout << arr[i] << " ";
+struct Height {
+    int feet;
+    int inches;
+};
+
+int toInch(Height h) {
+    return h.feet*12 + h.inches;
 }
 
-int* game_with_number(int arr[], int n) {
-    for ( int i = 0; i <= n-2; i++ ) arr[i] ^= arr[i+1];
-    return arr;
+int findMax(Height arr[], int n) {
+    int mx = 0;
+    for ( int i = 0; i < n; i++ ) mx = max( mx, toInch(arr[i]) );
+    return mx;
 }
 
 int main () {
 
-    int arr[] = {10, 11, 1, 2, 3}, n = 5;
+    Height h1, h2;
 
-    int *ar2 = game_with_number(arr, n);
+    h1.feet = 1;
+    h1.inches = 2;
 
-    printArray(ar2, n);
+    h2.feet = 2;
+    h2.inches = 1;
+
+    Height arr [] = { h1, h2 };
+
+    cout << findMax(arr, 2) << endl;
 
     return 0;
 

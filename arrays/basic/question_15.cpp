@@ -1,38 +1,48 @@
 /*
 
-    ==> Product of array elements <==
+    ==> Replace all 0's with 5 <==
 
-Question Link:- https://practice.geeksforgeeks.org/problems/product-of-array-element/1?page=1&difficulty[]=-1&category[]=Arrays&sortBy=submissions
+Question Link:- https://practice.geeksforgeeks.org/problems/replace-all-0s-with-5/1?page=1&difficulty[]=-1&category[]=Arrays&sortBy=submissions
 
-This is a functional problem. Your task is to return the product 
-of array elements under a given modulo.
-The modulo operation finds the remainder after the division of one number 
-by another. For example, K(mod(m))=K%m= remainder obtained when K is divided by m
+You are given an integer N. You need to convert all zeroes of N to 5.
 
-Example:
+Example 1:
     Input:
-        1
-        4
-        1 2 3 4
-    Output:
-        24
+        N = 1004
+    Output: 1554
+    Explanation: There are two zeroes in 1004
+    on replacing all zeroes with "5", the new
+    number will be "1554".
+
+Example 2:
+    Input:
+        N = 121
+    Output: 121
+    Explanation: Since there are no zeroes in
+    "121", the number remains as "121".
 
 */
 
 #include <iostream>
+#include <math.h>
 using namespace std;
 
-long long int product(int arr[], int n, long long int mod) {
-    long long int prod = 1;
-    for ( int i = 0; i < n; i++ ) 
-        prod = ( prod * arr[i] ) % mod;
-    return prod;
+int convertFive(int n) {
+    int res = 0, i = 0;
+    while ( n != 0 ) {
+        int digit = n % 10;
+        if (digit == 0) digit = 5;
+        digit *= pow(10, i);
+        i++;
+        res += digit;
+        n /= 10;
+    }
+    return res;
 }
 
 int main () {
 
-    int arr [] = { 1, 2, 3, 4 };
-    cout << product(arr, 4, 1);
+    cout << convertFive(1004);
 
     return 0;
 

@@ -1,29 +1,33 @@
 /*
 
-    ==> Largest Element in Array <==
+    ==> Check if two arrays are equal or not <== 
 
-Question Link:- https://practice.geeksforgeeks.org/problems/largest-element-in-array4009/1?page=1&difficulty[]=-1&category[]=Arrays&sortBy=submissions
+Question Link:- https://practice.geeksforgeeks.org/problems/check-if-two-arrays-are-equal-or-not3847/1?page=1&difficulty[]=-1&category[]=Arrays&sortBy=submissions
 
-Given an array A[] of size n. The task is to find the largest element in it.
+Given two arrays A and B of equal size N, the task is to find if given 
+arrays are equal or not. Two arrays are said to be equal if both of them 
+contain same set of elements, arrangements (or permutation) of elements 
+may be different though.
+Note : If there are repetitions, then counts of repeated elements must 
+also be same for two array to be equal.
 
 Example 1:
     Input:
-        n = 5
-        A[] = {1, 8, 7, 56, 90}
-    Output:
-        90
-    Explanation:
-    The largest element of given array is 90.
-    
+        N = 5
+        A[] = {1,2,5,4,0}
+        B[] = {2,4,5,0,1}
+    Output: 1
+    Explanation: Both the array can be 
+    rearranged to {0,1,2,4,5}
 
 Example 2:
     Input:
-        n = 7
-        A[] = {1, 2, 0, 3, 2, 4, 5}
-    Output:
-        5
-    Explanation:
-    The largest element of given array is 5.
+        N = 3
+        A[] = {1,2,5}
+        B[] = {2,4,15}
+    Output: 0
+    Explanation: A[] and B[] have only 
+    one common value.
 
 */
 
@@ -32,16 +36,20 @@ Example 2:
 #include <algorithm>
 using namespace std;
 
-int largest(vector<int> &arr, int n) {
-    sort(arr.begin(), arr.end());
-    return arr[n-1];
+bool check(vector<long long int> A, vector<long long int> B, int N) {
+    sort(A.begin(), A.end());
+    sort(B.begin(), B.end());
+    for ( int i = 0; i < N; i++ )
+        if ( A[i] != B[i] ) return false;
+    return true;
 }
 
 int main () {
 
-    vector<int> arr = { 1, 2, 0, 3, 2, 4, 5 };
+    vector<long long int> A = {1,2,5,4,0};
+    vector<long long int> B = {2,4,5,0,1};
 
-    cout << largest(arr, 7);
+    cout << check(A, B, 5);
 
     return 0;
 

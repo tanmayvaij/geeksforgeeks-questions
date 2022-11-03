@@ -1,45 +1,66 @@
 /*
 
-    ==> Find minimum and maximum element in an array <==
+    ==> Search an Element in an array <==
 
-Question Link:- https://practice.geeksforgeeks.org/problems/find-minimum-and-maximum-element-in-an-array4428/1?page=1&difficulty[]=-1&category[]=Arrays&sortBy=submissions
+Question Link:- https://practice.geeksforgeeks.org/problems/search-an-element-in-an-array-1587115621/1?page=1&difficulty[]=-1&category[]=Arrays&sortBy=submissions
 
-Given an array A of size N of integers. Your task is to find the minimum 
-and maximum elements in the array.
+Given an integer array and another integer element. The task is to find if the
+given element is present in array or not.
 
 Example 1:
     Input:
-        N = 6
-        A[] = {3, 2, 1, 56, 10000, 167}
-    Output:
-        min = 1, max =  10000
- 
+        n = 4
+        arr[] = {1,2,3,4}
+        x = 3
+    Output: 2
+    Explanation: There is one test case
+    with array as {1, 2, 3 4} and element
+    to be searched as 3.  Since 3 is
+    present at index 2, output is 2.
 
 Example 2:
     Input:
-        N = 5
-        A[]  = {1, 345, 234, 21, 56789}
-    Output:
-        min = 1, max = 56789
+        n = 5
+        arr[] = {1,2,3,4,5}
+        x = 5
+    Output: 4
+    Explanation: For array elements
+    {1,2,3,4,5} element to be searched
+    is 5 and it is at index 4. So, the
+    output is 4.
 
 */
 
 #include <iostream>
-#include <algorithm>
 using namespace std;
 
-pair<long long, long long> getMinMax(long long arr[], int n) {
-    sort(arr, arr+n);
-    return make_pair(arr[0], arr[n-1]);
+int search(int arr[], int N, int X) {
+
+    int l = 0, r = N - 1;
+
+    while (l <= r) {
+
+        int m = (l + r) / 2;
+
+        if (arr[m] == X)
+            return m;
+
+        if (arr[m] < X)
+            l = m + 1;
+
+        else
+            r = m - 1;
+
+    }
+
+    return -1;
+
 }
 
-int main () {
+int main(){
 
-    long long arr[] = { 3, 2, 1, 56, 10000, 167 };
-
-    pair<long long, long long> ans = getMinMax(arr, 6);
-
-    cout << ans.first << " " << ans.second << endl;
+    int arr[] = {1,2,3,4,5};
+    cout << search(arr, 5, 5) << endl;
 
     return 0;
 

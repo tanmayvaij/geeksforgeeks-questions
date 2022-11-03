@@ -1,66 +1,71 @@
 /*
 
-    ==> Search an Element in an array <==
+    ==> First and last occurrences of x <==
 
-Question Link:- https://practice.geeksforgeeks.org/problems/search-an-element-in-an-array-1587115621/1?page=1&difficulty[]=-1&category[]=Arrays&sortBy=submissions
+Question Link:- https://practice.geeksforgeeks.org/problems/first-and-last-occurrences-of-x3116/1?page=1&difficulty[]=-1&category[]=Arrays&sortBy=submissions
 
-Given an integer array and another integer element. The task is to find if the
-given element is present in array or not.
+Given a sorted array arr containing n elements with possibly duplicate elements, 
+the task is to find indexes of first and last occurrences of an element x in the given array.
 
 Example 1:
     Input:
-        n = 4
-        arr[] = {1,2,3,4}
-        x = 3
-    Output: 2
-    Explanation: There is one test case
-    with array as {1, 2, 3 4} and element
-    to be searched as 3.  Since 3 is
-    present at index 2, output is 2.
+        n=9, x=5
+        arr[] = { 1, 3, 5, 5, 5, 5, 67, 123, 125 }
+    Output:  2 5
+    Explanation: First occurrence of 5 is at index 2 and last
+                occurrence of 5 is at index 5. 
+ 
 
 Example 2:
     Input:
-        n = 5
-        arr[] = {1,2,3,4,5}
-        x = 5
-    Output: 4
-    Explanation: For array elements
-    {1,2,3,4,5} element to be searched
-    is 5 and it is at index 4. So, the
-    output is 4.
+        n=9, x=7
+        arr[] = { 1, 3, 5, 5, 5, 5, 7, 123, 125 }
+    Output:  6 6 
 
 */
 
 #include <iostream>
+#include <vector>
 using namespace std;
 
-int search(int arr[], int N, int X) {
+void printVector( vector<int> v ) {
+    for ( int i = 0; i < v.size(); i++ ) cout << v[i] << " ";
+}
 
-    int l = 0, r = N - 1;
+vector<int> find(int arr[], int n , int x ) {
 
-    while (l <= r) {
+    int first = -1, last = -1;
+    bool found = false;
 
-        int m = (l + r) / 2;
-
-        if (arr[m] == X)
-            return m;
-
-        if (arr[m] < X)
-            l = m + 1;
-
-        else
-            r = m - 1;
-
+    for (int i = 0; i < n; i++) {
+        if ( arr[i] == x ) {
+            first = i;
+            found = true;
+            break;
+        }
     }
 
-    return -1;
+    if ( found = false )
+        return { -1, -1 };
+
+    for (int i = n-1; i >= 0; i--) {
+        if ( arr[i] == x ) {
+            last = i;
+            break;
+        }
+    }
+
+    return { first, last };
 
 }
 
-int main(){
+int main () {
 
-    int arr[] = {1,2,3,4,5};
-    cout << search(arr, 5, 5) << endl;
+    int arr[] = { 1, 3, 5, 5, 5, 5, 7, 123, 125 };
+
+    vector<int> ans = find(arr, 9, 7);
+
+    printVector(ans);
 
     return 0;
 

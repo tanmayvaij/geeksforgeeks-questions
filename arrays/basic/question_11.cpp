@@ -1,73 +1,78 @@
 /*
+    ==> Implement Queue using array <==
 
-    ==> Implement stack using array <==
+Question Link:- https://practice.geeksforgeeks.org/problems/implement-queue-using-array/1?page=1&difficulty[]=-1&category[]=Arrays&sortBy=submissions
 
-Question Link:- https://practice.geeksforgeeks.org/problems/implement-stack-using-array/1?page=1&difficulty[]=-1&category[]=Arrays&sortBy=submissions
-
-Write a program to implement a Stack using Array. Your task is to use the class 
-as shown in the comments in the code editor and complete the functions push() and pop() 
-to implement a stack. 
+Implement a Queue using an Array. Queries in the Queue are of the following type:
+(i) 1 x   (a query of this type means  pushing 'x' into the queue)
+(ii) 2     (a query of this type means to pop element from queue and print the poped element)
 
 Example 1:
-    Input: 
-        push(2)
-        push(3)
-        pop()
-        push(4) 
-        pop()
-    Output: 3, 4
-    Explanation: 
-    push(2)    the stack will be {2}
-    push(3)    the stack will be {2 3}
-    pop()      poped element will be 3,
-            the stack will be {2}
-    push(4)    the stack will be {2 4}
-    pop()      poped element will be 4
+    Input:
+        Q = 5
+        Queries = 1 2 1 3 2 1 4 2
+    Output: 2 3
+    Explanation:
+    In the first test case for query 
+    1 2 the queue will be {2}
+    1 3 the queue will be {2 3}
+    2   poped element will be 2 the 
+        queue will be {3}
+    1 4 the queue will be {3 4}
+    2   poped element will be 3 
 
 Example 2:
-    Input: 
-        pop()
-        push(4)
-        push(5)
-        pop()
-    Output: -1, 5
+    Input:
+        Q = 4
+        Queries = 1 3 2 2 1 4   
+    Output: 3 -1
+    Explanation:
+    In the second testcase for query 
+    1 3 the queue will be {3}
+    2   poped element will be 3 the
+        queue will be empty
+    2   there is no element in the
+        queue and hence -1
+    1 4 the queue will be {4}. 
 
 */
 
 #include <iostream>
 using namespace std;
 
-class MyStack {
+class MyQueue {
+
     private:
-        int arr[1000], top;
-    public:
-        MyStack() {
-            top = -1;
+        int arr[100005], front, rear;
+
+    public :
+        MyQueue() {
+            front=0;
+            rear=0;
         }
+        void push(int x);
         int pop();
-        void push(int n);
+
 };
 
-void MyStack :: push(int n) {
-    top++;
-    arr[top] = n;
+void MyQueue :: push(int x) {
+    arr[rear] = x;
+    rear++;
 }
 
-int MyStack :: pop() {
-    if (top == -1) return -1;
-    int res = arr[top];
-    top--;
-    return res;
+int MyQueue :: pop() {
+    return ( front == rear ) ? -1 : arr[front++] ;
 }
 
 int main () {
 
-    MyStack s;
+    MyQueue q;
 
-    cout << s.pop() << endl;
-    s.push(4);
-    s.push(5);
-    cout << s.pop() << endl;
+    q.push(2);
+    q.push(3);
+    cout << q.pop();
+    q.push(4);
+    cout << q.pop();
 
     return 0;
 

@@ -1,44 +1,50 @@
 /*
 
-    ==> Number of occurrence <==
+    ==> Binary Array Sorting <==
 
-Question Link:- https://practice.geeksforgeeks.org/problems/number-of-occurrence2259/1?page=1&difficulty[]=-1&category[]=Arrays&sortBy=submissions
+Question Link:- https://practice.geeksforgeeks.org/problems/binary-array-sorting-1587115620/1?page=1&difficulty[]=-1&category[]=Arrays&sortBy=submissions
 
-Given a sorted array Arr of size N and a number X, you need to find the number of occurrences of X in Arr.
+Given a binary array A[] of size N. The task is to arrange the array in increasing order.
+Note: The binary array contains only 0  and 1.
 
 Example 1:
-    Input:
-        N = 7, X = 2
-        Arr[] = {1, 1, 2, 2, 2, 2, 3}
-    Output: 4
-    Explanation: 2 occurs 4 times in the
-    given array.
+    Input: 
+        5
+        1 0 1 1 0
+    Output: 
+        0 0 1 1 1
+    Explanation: 
+    After arranging the elements in 
+    increasing order, elements will be as 
+    0 0 1 1 1.
 
 Example 2:
     Input:
-        N = 7, X = 4
-        Arr[] = {1, 1, 2, 2, 2, 2, 3}
-    Output: 0
-    Explanation: 4 is not present in the
-    given array.
+        10
+        1 0 1 1 1 1 1 0 0 0
+    Output: 
+        0 0 0 0 1 1 1 1 1 1
+    Explanation: 
+    After arranging the elements in 
+    increasing order, elements will be 
+    0 0 0 0 1 1 1 1 1 1.
 
 */
 
 #include <iostream>
+#include <algorithm>
 using namespace std;
 
-int count(int arr[], int n, int x) {
-	int c = 0;
-	for ( int i = 0; i < n; i++ ) 
-	    if ( arr[i] == x ) c++;
-    return c;
+void binSort(int A[], int N) {
+    sort(A, A+N);
+    for ( int i = 0; i < N; i++ ) cout << A[i] << " ";
+    cout << endl;
 }
 
-int main () {
+int main() {
 
-    int arr[] = {1, 1, 2, 2, 2, 2, 3};
-
-    cout << count(arr, 7, 2);
+    int A[] = { 1, 0, 1, 1, 1, 1, 1, 0, 0, 0 };
+    binSort(A, 10);
 
     return 0;
 

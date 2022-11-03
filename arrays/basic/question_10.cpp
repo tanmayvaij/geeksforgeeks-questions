@@ -1,71 +1,46 @@
 /*
 
-    ==> First and last occurrences of x <==
+    ==> Maximize sum(arr[i]*i) of an Array <==
 
-Question Link:- https://practice.geeksforgeeks.org/problems/first-and-last-occurrences-of-x3116/1?page=1&difficulty[]=-1&category[]=Arrays&sortBy=submissions
+Question Link:- https://practice.geeksforgeeks.org/problems/maximize-arrii-of-an-array0026/1?page=1&difficulty[]=-1&category[]=Arrays&sortBy=submissions
 
-Given a sorted array arr containing n elements with possibly duplicate elements, 
-the task is to find indexes of first and last occurrences of an element x in the given array.
+Given an array A of N integers. Your task is to write a program to find the maximum 
+value of arr[i]*i, where i = 0, 1, 2,., n 1.
+You are allowed to rearrange the elements of the array.
+Note: Since output could be large, hence module 109+7 and then print answer.
 
 Example 1:
-    Input:
-        n=9, x=5
-        arr[] = { 1, 3, 5, 5, 5, 5, 67, 123, 125 }
-    Output:  2 5
-    Explanation: First occurrence of 5 is at index 2 and last
-                occurrence of 5 is at index 5. 
- 
+    Input : Arr[] = {5, 3, 2, 4, 1}
+    Output : 40
+    Explanation:
+    If we arrange the array as 1 2 3 4 5 then 
+    we can see that the minimum index will multiply
+    with minimum number and maximum index will 
+    multiply with maximum number. 
+    So 1*0+2*1+3*2+4*3+5*4=0+2+6+12+20 = 40 mod(109+7) = 40
 
 Example 2:
-    Input:
-        n=9, x=7
-        arr[] = { 1, 3, 5, 5, 5, 5, 7, 123, 125 }
-    Output:  6 6 
+    Input : Arr[] = {1, 2, 3}
+    Output : 8
 
 */
 
 #include <iostream>
-#include <vector>
+#include <math.h>
+#include <algorithm>
 using namespace std;
 
-void printVector( vector<int> v ) {
-    for ( int i = 0; i < v.size(); i++ ) cout << v[i] << " ";
-}
-
-vector<int> find(int arr[], int n , int x ) {
-
-    int first = -1, last = -1;
-    bool found = false;
-
-    for (int i = 0; i < n; i++) {
-        if ( arr[i] == x ) {
-            first = i;
-            found = true;
-            break;
-        }
-    }
-
-    if ( found = false )
-        return { -1, -1 };
-
-    for (int i = n-1; i >= 0; i--) {
-        if ( arr[i] == x ) {
-            last = i;
-            break;
-        }
-    }
-
-    return { first, last };
-
+int Maximize(int arr[],int n) {
+    int sum = 0;
+    sort(arr, arr+n);
+    for ( int i = 0; i < n; i++ ) sum += i * arr[i];
+    return sum % 1000000007;
 }
 
 int main () {
 
-    int arr[] = { 1, 3, 5, 5, 5, 5, 7, 123, 125 };
-
-    vector<int> ans = find(arr, 9, 7);
-
-    printVector(ans);
+    int arr[] = { 1, 2, 3 };
+    cout << Maximize(arr, 3);
 
     return 0;
 

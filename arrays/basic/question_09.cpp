@@ -1,55 +1,73 @@
 /*
 
-    ==> Check if two arrays are equal or not <== 
+    ==> Implement stack using array <==
 
-Question Link:- https://practice.geeksforgeeks.org/problems/check-if-two-arrays-are-equal-or-not3847/1?page=1&difficulty[]=-1&category[]=Arrays&sortBy=submissions
+Question Link:- https://practice.geeksforgeeks.org/problems/implement-stack-using-array/1?page=1&difficulty[]=-1&category[]=Arrays&sortBy=submissions
 
-Given two arrays A and B of equal size N, the task is to find if given 
-arrays are equal or not. Two arrays are said to be equal if both of them 
-contain same set of elements, arrangements (or permutation) of elements 
-may be different though.
-Note : If there are repetitions, then counts of repeated elements must 
-also be same for two array to be equal.
+Write a program to implement a Stack using Array. Your task is to use the class 
+as shown in the comments in the code editor and complete the functions push() and pop() 
+to implement a stack. 
 
 Example 1:
-    Input:
-        N = 5
-        A[] = {1,2,5,4,0}
-        B[] = {2,4,5,0,1}
-    Output: 1
-    Explanation: Both the array can be 
-    rearranged to {0,1,2,4,5}
+    Input: 
+        push(2)
+        push(3)
+        pop()
+        push(4) 
+        pop()
+    Output: 3, 4
+    Explanation: 
+    push(2)    the stack will be {2}
+    push(3)    the stack will be {2 3}
+    pop()      poped element will be 3,
+            the stack will be {2}
+    push(4)    the stack will be {2 4}
+    pop()      poped element will be 4
 
 Example 2:
-    Input:
-        N = 3
-        A[] = {1,2,5}
-        B[] = {2,4,15}
-    Output: 0
-    Explanation: A[] and B[] have only 
-    one common value.
+    Input: 
+        pop()
+        push(4)
+        push(5)
+        pop()
+    Output: -1, 5
 
 */
 
 #include <iostream>
-#include <vector>
-#include <algorithm>
 using namespace std;
 
-bool check(vector<long long int> A, vector<long long int> B, int N) {
-    sort(A.begin(), A.end());
-    sort(B.begin(), B.end());
-    for ( int i = 0; i < N; i++ )
-        if ( A[i] != B[i] ) return false;
-    return true;
+class MyStack {
+    private:
+        int arr[1000], top;
+    public:
+        MyStack() {
+            top = -1;
+        }
+        int pop();
+        void push(int n);
+};
+
+void MyStack :: push(int n) {
+    top++;
+    arr[top] = n;
+}
+
+int MyStack :: pop() {
+    if (top == -1) return -1;
+    int res = arr[top];
+    top--;
+    return res;
 }
 
 int main () {
 
-    vector<long long int> A = {1,2,5,4,0};
-    vector<long long int> B = {2,4,5,0,1};
+    MyStack s;
 
-    cout << check(A, B, 5);
+    cout << s.pop() << endl;
+    s.push(4);
+    s.push(5);
+    cout << s.pop() << endl;
 
     return 0;
 

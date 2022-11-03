@@ -1,41 +1,44 @@
 /*
 
-    ==> Third largest element <==
+    ==> Number of occurrence <==
 
-Question Link:- https://practice.geeksforgeeks.org/problems/third-largest-element/1?page=1&difficulty[]=-1&category[]=Arrays&sortBy=submissions
+Question Link:- https://practice.geeksforgeeks.org/problems/number-of-occurrence2259/1?page=1&difficulty[]=-1&category[]=Arrays&sortBy=submissions
 
-Given an array of distinct elements. Find the third largest element in it.
-
-Suppose you have A[] = {1, 2, 3, 4, 5, 6, 7}, its output will be 5 because 
-it is the 3 largest element in the array A.
+Given a sorted array Arr of size N and a number X, you need to find the number of occurrences of X in Arr.
 
 Example 1:
     Input:
-        N = 5
-        A[] = {2,4,1,3,5}
-    Output: 3
+        N = 7, X = 2
+        Arr[] = {1, 1, 2, 2, 2, 2, 3}
+    Output: 4
+    Explanation: 2 occurs 4 times in the
+    given array.
 
 Example 2:
     Input:
-        N = 2
-        A[] = {10,2}
-    Output: -1
+        N = 7, X = 4
+        Arr[] = {1, 1, 2, 2, 2, 2, 3}
+    Output: 0
+    Explanation: 4 is not present in the
+    given array.
 
 */
 
 #include <iostream>
-#include <algorithm>
 using namespace std;
 
-int thirdLargest(int arr[], int n) {
-    sort(arr, arr+n);
-    return arr[n-3];
+int count(int arr[], int n, int x) {
+	int c = 0;
+	for ( int i = 0; i < n; i++ ) 
+	    if ( arr[i] == x ) c++;
+    return c;
 }
 
 int main () {
 
-    int arr[] = { 2, 4, 1, 3, 5 };
-    cout << thirdLargest(arr, 5);
+    int arr[] = {1, 1, 2, 2, 2, 2, 3};
+
+    cout << count(arr, 7, 2);
 
     return 0;
 
