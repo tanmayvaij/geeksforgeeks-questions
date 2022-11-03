@@ -54,7 +54,7 @@
 |20|Ishaan Loves Chocolates|[Link](https://github.com/tanmayvaij/geeksforgeeks-questions/blob/main/arrays/basic/question_20.cpp)|
 |21|Maximum in Struct Array|[Link](https://github.com/tanmayvaij/geeksforgeeks-questions/blob/main/arrays/basic/question_21.cpp)|
 |22|Product of maximum in first array and minimum in second|[Link](https://github.com/tanmayvaij/geeksforgeeks-questions/blob/main/arrays/basic/question_22.cpp)|
-|23|Last index of One|[Link](https://github.com/tanmayvaij/geeksforgeeks-questions/blob/main/arrays/basic/question_23   .cpp)|
+|23|Last index of One|[Link](https://github.com/tanmayvaij/geeksforgeeks-questions/blob/main/arrays/basic/question_23.cpp)|
 
 <br/>
 
