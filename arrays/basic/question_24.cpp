@@ -26,15 +26,31 @@ Example 2:
 */
 
 #include <iostream>
+#include <vector>
 using namespace std;
 
+void printArray(int arr [], int n) {
+    for ( int i = 0; i < n; i++ ) cout << arr[i] << "";
+    cout << endl;
+}
+
 void leftRotate(int arr[], int n, int d) {
-    for ( int i = 0; i < d; i++ ) {
-        
-    }
+
+    vector<int> tempar;
+
+    for ( int i = d; i < n; i++ ) tempar.push_back(arr[i]);
+    for ( int i = 0; i < d; i++ ) tempar.push_back(arr[i]);
+    for ( int i = 0; i < n; i++ ) arr[i] = tempar[i];
+
 }
 
 int main () {
+
+    int arr[] = {1, 2, 3, 4, 5, 6, 7};
+
+    leftRotate(arr, 7, 2);
+
+    printArray(arr, 7);
 
     return 0;
 
