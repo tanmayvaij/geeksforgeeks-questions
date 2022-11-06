@@ -60,7 +60,7 @@
 |26|Find the smallest and second smallest element in an array|[Link](https://github.com/tanmayvaij/geeksforgeeks-questions/blob/main/arrays/basic/question_26.cpp)|
 |27|Multiply left and right array sum|[Link](https://github.com/tanmayvaij/geeksforgeeks-questions/blob/main/arrays/basic/question_27.cpp)|
 |28|Balanced Array|[Link](https://github.com/tanmayvaij/geeksforgeeks-questions/blob/main/arrays/basic/question_28.cpp)|
-
+|29|Fighting the darkness|[Link](https://github.com/tanmayvaij/geeksforgeeks-questions/blob/main/arrays/basic/question_29.cpp)|
 
 <br/>
 
@@ -72,6 +72,7 @@
 |2|Missing number in array|[Link](https://github.com/tanmayvaij/geeksforgeeks-questions/blob/main/arrays/easy/question_02.cpp)|
 |3|Sort an array of 0s, 1s and 2s|[Link](https://github.com/tanmayvaij/geeksforgeeks-questions/blob/main/arrays/easy/question_03.cpp)|
 |4|Find duplicates in an array|[Link](https://github.com/tanmayvaij/geeksforgeeks-questions/blob/main/arrays/easy/question_04.cpp)|
+|5|Sum of Array Elements|[Link](https://github.com/tanmayvaij/geeksforgeeks-questions/blob/main/arrays/easy/question_05.cpp)|
 
 <br/>
 
@@ -81,6 +82,7 @@
 |-|-----------|-----------|
 |1|Kth smallest element|[Link](https://github.com/tanmayvaij/geeksforgeeks-questions/blob/main/arrays/medium/question_01.cpp)|
 |2|Majority Element|[Link](https://github.com/tanmayvaij/geeksforgeeks-questions/blob/main/arrays/medium/question_02.cpp)|
+|3|Minimum number of Coins|[Link](https://github.com/tanmayvaij/geeksforgeeks-questions/blob/main/arrays/medium/question_03.cpp)|
 
 <br/>
 
@@ -88,4 +90,4 @@
 
 | | Questions | Solutions |
 |-|-----------|-----------|
-|2|Display longest name|[Link](https://github.com/tanmayvaij/geeksforgeeks-questions/blob/main/strings/school/question_02.cpp)|
+|1|Display longest name|[Link](https://github.com/tanmayvaij/geeksforgeeks-questions/blob/main/strings/school/question_01.cpp)|
