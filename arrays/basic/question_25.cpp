@@ -2,6 +2,8 @@
 
     ==> Exceptionally odd <==
 
+Question Link:- https://practice.geeksforgeeks.org/problems/find-the-odd-occurence4820/1?page=2&difficulty[]=-1&category[]=Arrays&sortBy=submissions
+
 Given an array of N positive integers where all numbers occur even number of times except one 
 number which occurs odd number of times. Find the exceptional number.
 

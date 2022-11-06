@@ -56,7 +56,11 @@
 |22|Product of maximum in first array and minimum in second|[Link](https://github.com/tanmayvaij/geeksforgeeks-questions/blob/main/arrays/basic/question_22.cpp)|
 |23|Last index of One|[Link](https://github.com/tanmayvaij/geeksforgeeks-questions/blob/main/arrays/basic/question_23.cpp)|
 |24|Rotating an Array|[Link](https://github.com/tanmayvaij/geeksforgeeks-questions/blob/main/arrays/basic/question_24.cpp)|
-|25|Last index of One|[Link](https://github.com/tanmayvaij/geeksforgeeks-questions/blob/main/arrays/basic/question_25.cpp)|
+|25|Exceptionally odd|[Link](https://github.com/tanmayvaij/geeksforgeeks-questions/blob/main/arrays/basic/question_25.cpp)|
+|26|Find the smallest and second smallest element in an array|[Link](https://github.com/tanmayvaij/geeksforgeeks-questions/blob/main/arrays/basic/question_26.cpp)|
+|27|Multiply left and right array sum|[Link](https://github.com/tanmayvaij/geeksforgeeks-questions/blob/main/arrays/basic/question_27.cpp)|
+|28|Balanced Array|[Link](https://github.com/tanmayvaij/geeksforgeeks-questions/blob/main/arrays/basic/question_28.cpp)|
+
 
 <br/>
 
