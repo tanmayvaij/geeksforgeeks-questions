@@ -82,8 +82,6 @@
 |-|-----------|-----------|
 |1|Kth smallest element|[Link](https://github.com/tanmayvaij/geeksforgeeks-questions/blob/main/arrays/medium/question_01.cpp)|
 |2|Majority Element|[Link](https://github.com/tanmayvaij/geeksforgeeks-questions/blob/main/arrays/medium/question_02.cpp)|
-|3|Minimum number of Coins|[Link](https://github.com/tanmayvaij/geeksforgeeks-questions/blob/main/arrays/medium/question_03.cpp)|
-
 <br/>
 
 ## Strings ( Level - School )
